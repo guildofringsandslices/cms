@@ -1,0 +1,49 @@
+/* reset */
+body, input, button, textarea, select {font-size:14px;}
+* {margin:0;padding:0;vertical-align:top;border-collapse:collapse;border-spacing:0;font-family:tahoma, sans-serif;outline:none;}
+
+/* fonts */
+p {margin:10px 0;line-height:20px;}
+a {color:#00c;}
+a:hover {color:#007;}
+
+h1 {font-weight:normal;margin-bottom:20px;font-size:35px;line-height:35px;}
+h2 {font-weight:normal;margin-bottom:20px;font-size:30px;line-height:30px;}
+h3 {font-weight:normal;margin-bottom:20px;font-size:25px;line-height:25px;}
+h4 {font-weight:normal;margin-bottom:20px;font-size:20px;line-height:20px;}
+h5 {font-weight:normal;margin-bottom:20px;font-size:15px;line-height:15px;}
+h6 {font-weight:normal;margin-bottom:20px;font-size:10px;line-height:10px;}
+
+/* form: common */
+input[type="text"], input[type="password"], input[type="email"] {height:28px;width:50%;float:left;border:1px solid #ccc;padding:0 5px;}
+input[type="submit"], button {margin:10px 0;display:block;-webkit-appearance: button;height:30px;line-height:30px;padding:0 10px;border:0;background:#000;color:#fff;cursor:pointer;}
+
+/* form: django */
+.control-group {margin:10px 0;}
+    .control-label {float:left;display:inline-block;vertical-align:middle;width:150px;}
+    .help-block {margin-left:150px;}
+    .required label:after {content:" *";}
+
+/* form: custom */
+.form {width:100%;}
+.form th {width:1px;white-space:nowrap;text-align:left;height:30px;line-height:30px;}
+.form .errorlist {list-style-type:none;height:30px;line-height:30px;color:#c00;}
+.form [colspan="2"] .errorlist {margin:0 10px 10px 0;}
+.form div {margin:0 0 10px 10px;min-height:30px;}
+.form .error input {border-color:#c00;margin-right:10px;}
+.form tr:last-child input {margin-bottom:0;}
+.form .helptext {padding-top:5px;color:#666;display:block;clear:both;}
+
+.header {width:980px;margin:0 auto 20px;border-bottom:1px solid #ccc;}
+    .logo {line-height:50px;height:50px;}
+    .user-menu {float:right;}
+        .user-menu-item {line-height:50px;height:50px;}
+
+.messages {width:980px;margin:0 auto 20px;}
+    .messages div {margin-top:5px;}
+    .messages div:first-child {margin-top:0;}
+    .messages .info {padding:10px;background:#ffc;border:1px solid #cc6}
+    .messages .error {padding:10px;background:#fcc;border:1px solid #c66}
+    .messages .success {padding:10px;background:#cfc;border:1px solid #6c6}
+
+.content {width:980px;margin:0 auto;}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block header %}
+    <h1>Регистрация</h1>
+{% endblock %}
+
+{% block content %}
+<div class='signup-form'>
+    <form method='post' action='.'>
+        {% csrf_token %}
+        <table class="form">
+            {{ form.as_table }}
+        </table>
+        <p>Нажимая на кнопку <strong>Зарегистрироваться</strong>, Вы принимаете условия <a href='{% url 'public_offer' %}'>Публичной оферты</a>.</p>
+
+        <input type='submit' value='Зарегистрироваться' class='btn btn-primary'/>
+    </form>
+</div>
+{% endblock %}

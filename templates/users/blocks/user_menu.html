@@ -1,0 +1,13 @@
+<div class="user-menu">
+    {% if user.is_authenticated %}
+        <a class="user-menu-item" href='{% url 'user' user.id %}'>Профиль</a>
+        <a class="user-menu-item" href='{% url 'user_edit' %}'>Редактировать</a>
+        <a class="user-menu-item" href='{% url 'edit_email' %}'>Сменить e-mail</a>
+        <a class="user-menu-item" href='{% url 'password_change' %}'>Сменить пароль</a>
+        <a class="user-menu-item" href='{% url 'logout' %}'>Выйти</a>
+    {% else %}
+        <a class="user-menu-item" href='{% url 'signup' %}'>Регистрация</a>
+        <a class="user-menu-item" href='{% url 'login' %}'>Вход</a>
+        <a class="user-menu-item" href='{% url 'password_reset' %}'>Забыли пароль?</a>
+    {% endif %}
+</div>

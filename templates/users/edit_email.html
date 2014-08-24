@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Изменить E-mail{% endblock %}
+
+{% block header %}<h1>Изменить E-mail</h1>{% endblock %}
+
+{% block content %}
+	<form method='post' action='.'>
+
+        {% csrf_token %}
+            <p><b>{{ request.user.email }}</b> {% if not request.user.is_active %}(не подтверждён, <a href="{% url 'send_activate' %}">Выслать повторное письмо подтверждения</a>){% endif %}{% if request.user.signup.email and request.user.signup.email != request.user.email %} -> {{ request.user.signup.email }} (не подтверждён, <a href="{% url 'send_activate' %}">Выслать повторное письмо подтверждения</a>){% endif %}</p>
+        <table class="form">
+		    {{ form.as_table }}
+        </table>
+
+		<input type='submit' value='Изменить E-mail' class='btn btn-primary'/>
+
+	</form>
+{% endblock %}

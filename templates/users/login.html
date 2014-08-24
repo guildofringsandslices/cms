@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Вход{% endblock %}
+
+{% block header %}<h1>Вход</h1>{% endblock %}
+
+{% block content %}
+    <form method='post' action='{% url "login" %}'>
+        {% csrf_token %}
+
+        {% if next %}
+            <p>Авторизуйтесь, перед тем как получить доступ к этой странице.</p>
+        {% endif %}
+
+        <table class="form">
+        {{ form.as_table }}
+        </table>
+
+        <input type='submit' value='Вход' class='btn btn-primary'/>
+        <input type='hidden' name='next' value='{{ next }}'/>
+
+        <p><a href='{% url "password_reset" %}'>Забыли пароль?</a></p>
+        <p><a href='{% url "signup" %}'>Регистрация</a></p>
+    </form>
+{% endblock %}

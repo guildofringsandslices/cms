@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{{ object.dump }}
+{{ object.text }}
+
+{% include 'core/admin_links.html' with object=object %}
+
+{% endblock %}

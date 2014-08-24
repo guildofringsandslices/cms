@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ site.name }}{% if request.path != "/" %} | {% endif %}{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/media/css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <div class="header">
+        {% include 'users/blocks/user_menu.html' %}
+        <a href="{% url 'base' %}" class="logo">{{ site.name }}</a>
+    </div>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="content">
+        {% block header %}
+            <h1>Добро пожаловать на {{ site.name }}!</h1>
+        {% endblock %}
+        {% block content %}
+            <p>Рады Вас видеть на нашем сайте!</p>
+        {% endblock %}
+    </div>
+</body>
+</html>

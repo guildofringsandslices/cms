@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Редактировать профиль{% endblock %}
+
+{% block header %}<h1>Редактировать профиль</h1>{% endblock %}
+
+{% block content %}
+    <form method='post' action=".">
+        {% csrf_token %}
+        <table class="form">
+            {{ form.as_table }}
+        </table>
+        <input type='submit' value='Сохранить изменения' class='btn btn-primary'/>
+    </form>
+{% endblock %}

@@ -1,0 +1,8 @@
+<div>
+    {% if object.id %}
+        <a href="{% url 'admin:'|add:object.app_object_name|add:'_change' object.id %}">Редактировать</a>
+    {% else %}
+        <a href="{% url 'admin:'|add:object.app_object_name|add:'_add' %}">Добавить</a>
+        <a href="{% url 'admin:'|add:object.app_object_name|add:'_changelist' %}">Все</a>
+    {% endif %}
+</div>
