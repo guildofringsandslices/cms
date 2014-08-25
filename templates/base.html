@@ -7,9 +7,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-    <div class="header">
-        {% include 'users/blocks/user_menu.html' %}
-        <a href="{% url 'base' %}" class="logo">{{ site.name }}</a>
+    <div class="header-wrapper">
+        <div class="header">
+            {% include 'users/blocks/user_menu.html' %}
+            <a href="{% url 'base' %}" class="logo">{{ site.name }}</a>
+        </div>
     </div>
     {% if messages %}
     <div class="messages">
@@ -20,10 +22,11 @@
     {% endif %}
     <div class="content">
         {% block header %}
-            <h1>Добро пожаловать на {{ site.name }}!</h1>
         {% endblock %}
         {% block content %}
-            <p>Рады Вас видеть на нашем сайте!</p>
+            {% for event in events %}
+                <div class="event">{{ event }}</div>
+            {% endfor %}
         {% endblock %}
     </div>
 </body>

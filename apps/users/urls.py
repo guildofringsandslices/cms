@@ -22,6 +22,4 @@ urlpatterns = patterns('',
 
     # TODO: Удалить пользователя
     # TODO: Формы edit, edit_email, password_change - должны быть на одной странице
-
-    url(r'^public_offer/', 'core.views.base', name="public_offer"),
 )

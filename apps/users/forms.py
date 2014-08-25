@@ -61,7 +61,7 @@ class BasePasswordForm(forms.Form):
 from django.core import validators
 from apps.users.models import UserSignup
 class SignupForm(BaseProfileForm, BasePasswordForm):
-    email = forms.CharField(label=_(u'E-mail'), help_text=u'E-mail', validators=[validators.EmailValidator(message=u'Введите корректный E-mail адрес.')])
+    email = forms.CharField(label=_(u'E-mail'), validators=[validators.EmailValidator(message=u'Введите корректный E-mail адрес.')])
 
     def clean_email(self):
         user = get_user_model().objects.filter(email=self.cleaned_data['email'])
